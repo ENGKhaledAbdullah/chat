@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Chat">
+    <meta property="og:title" content="chat menu" />
+    <meta property="og:description" content="chat layout design." />
+    <meta property="og:locale" content="en_US" />
+    <link rel="stylesheet" href="assets/fontawesome-v6.4.2/fontawesome-v6.4.2/css/all.css">
+    <link rel="stylesheet" href="assets/css/chat.css">
+    <script src="assets/js/jquery.js"></script>
+    <title>chat</title>
+</head>
+<body>
+    <button id="btn" ></button>
+    <div id="cir" class="circle">
+        <div class="hover-container">
+            <div class="menu"><img src="assets/imgs/menu.png" alt=""></div>
+                <div class="contactors">
+                    <div class="contact">
+                        <img src="assets/imgs/bruce-lee.png" alt="cake">
+                        <p>tony stark</p>
+                    </div>
+                    <div class="contact">
+                        <img src="assets/imgs/bruce-lee.png" alt="cake">
+                        <p>tony stark</p>
+                    </div>
+                    <div class="contact">
+                        <img src="assets/imgs/bruce-lee.png" alt="cake">
+                        <p>tony stark</p>
+                    </div>
+                
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="contactor">
+                <img src="assets/imgs/bruce-lee.png" alt="cake">
+                <p>tony stark</p>
+                <span>Today at 12:56</span>
+                <button id="closeBtn">X</button>
+            </div>
+            <div class="chat-conversation">
+                <button>Today at 11:41</button>
+                <div class="my-msg">Hey, man! what's up, MrStar? 👋</div>
+                <div class="contactor-msg">Kid where'd you come from?</div>
+                <div class="my-msg">Field trip! 🤣</div>
+                <div class="my-msg">Uh, what is this guy's problem, Mr Stark? 🤔</div>
+                <div class="contactor-msg">Uh, he's from space, he came here to steal a necklace from a wizard</div>
+                <div class="contactor-msg">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="chat-action-bar">
+                <i class="fa fa-camera"></i>
+                <i class="fa fa-face-smile"></i>
+                <input id="message" type="text" placeholder="Type your message here!">
+                <i class="fa fa-microphone"></i>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("#btn").click(function() {
+                $("#btn").hide(300);
+                $(".circle").show(300);
+            });
+
+            $("#closeBtn").click(function() {
+                $(".circle").hide(300);
+                $("#btn").show(300);
+            });
+            $("#message").keypress(function(e) {
+            if (e.which === 13) {
+                var message = $(this).val();
+                if (message.trim() !== "") {
+                $(".chat-conversation").append("<div class='my-msg new-msg'>" + message + "</div>");
+                $(this).val("");
+                }
+            }
+            });
+        });
+    </script>
+</body>
+</html>
