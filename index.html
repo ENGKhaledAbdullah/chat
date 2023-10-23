@@ -80,6 +80,8 @@
                 if (message.trim() !== "") {
                 $(".chat-conversation").append("<div class='my-msg new-msg'>" + message + "</div>");
                 $(this).val("");
+                var chatConversation = $(".chat-conversation");
+                chatConversation.scrollTop(chatConversation[0].scrollHeight);
                 }
             }
             });
